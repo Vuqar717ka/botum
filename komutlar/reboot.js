@@ -18,5 +18,7 @@ exports.conf = {
 };
 
 exports.help = {
-  usage: 'reboot'
+  name: 'reboot',
+  description: 'Yeniden başlatır.',
+  usage:'reboot'
 };
