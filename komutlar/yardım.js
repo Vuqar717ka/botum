@@ -24,4 +24,4 @@ exports.help = {
   name: 'yardım',
   description: 'Tüm komutları gösterir.',
   usage: 'yardım'
-};
+}};
