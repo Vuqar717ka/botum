@@ -109,6 +109,23 @@ client.on("message", async message => {
   }
 });
 
+
+
+    client.on("message", message => {
+    const dmchannel = client.channels.find("name", "botlog");
+    if (message.channel.type === "dm") {
+        if (message.author.id === client.user.id) return;
+        dmchannel.sendMessage("", {embed: {
+                color: 3447003,
+                title: `Yazan: ${message.author.tag}`,
+                description: `${message.content}`
+              }})
+    }
+    if (message.channel.bot) return;
+});
+
+
+
 client.on('message', async message => {
     if (message.content.toLowerCase() === prefix + 'döviz') {
 var request = require('request');
