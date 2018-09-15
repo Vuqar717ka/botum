@@ -4,7 +4,6 @@ const Discord = require('discord.js');
 exports.run = function(client, message) { 
 }
   
-if (message.content === prefix + 'reboot') {
   
   if (message.author.id === "342380541003300865") {
     message.channel.send('myBot yeniden başlatılıyor...').then(msg => {
@@ -13,7 +12,7 @@ if (message.content === prefix + 'reboot') {
     });
   } else 
     message.channel.send('Maalesef bu komutu kullanamazsın. Benim yapımcım değilsin!')
-}
+
       
 
 ;
