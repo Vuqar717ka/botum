@@ -1,14 +1,22 @@
 const Discord = require('discord.js');
 
 
-exports.run = function(client, message) {
-
-    message.channel.send("Bot yeniden başlatılıyor").then(msg => {
-        console.log("[BOT]Yeniden başlatılıyor");
-        process.exit(0);
+exports.run = function(client, message) { 
+}
+  
+if (message.content === prefix + 'reboot') {
+  
+  if (message.author.id === "342380541003300865") {
+    message.channel.send('myBot yeniden başlatılıyor...').then(msg => {
+      console.log('myBot yeniden başlatılıyor.')
+      process.exit(0);
     });
+  } else 
+    message.channel.send('Maalesef bu komutu kullanamazsın. Benim yapımcım değilsin!')
+}
+      
 
-};
+;
 
 exports.conf = {
   enabled: true, 
@@ -18,7 +26,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'reboot',
-  description: 'Yeniden başlatır.',
-  usage:'reboot'
+  name: 'reboot', 
+  description: 'Botu yeniden başlatır',
+  usage: 'reboot'
 };
