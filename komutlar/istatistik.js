@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
    const seksizaman = moment.duration(bot.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
    const istatistikler = new Discord.RichEmbed()
   .setColor('RANDOM')
-  .setFooter('Croxy\'s', bot.user.avatarURL)
+  .setFooter('DailyBot\'s', bot.user.avatarURL)
   .addField("» Botun Sahibi", "<@342380541003300865> | Aslı#1776")
   .addField("» Bellek kullanımı", (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + ' MB', true)  
   .addField("» Çalışma süresi", seksizaman)
@@ -16,8 +16,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("» Discord.JS sürüm", "v"+Discord.version, true)
   .addField(`» Node.JS sürüm`, `${process.version}`, true)
   .addField("» Ping", bot.ping+" ms", true)
-  .addField("**❯ Bot Davet**", " [Davet Et](BOTUNUN DAVET LİNKİ KARDEŞİM.)", )
-  .addField("**❯ Destek Sunucusu**", " [Sunucumuza Katıl](BOTUNUN DESTEK SUNUCUSU KARDEŞİM)", )
+  .addField("**❯ Bot Davet**", " [Davet Et](https://discordapp.com/oauth2/authorize?client_id=481784541724278784&scope=bot&permissions=2146958847)", )
   return message.channel.send(istatistikler);
   };
 
