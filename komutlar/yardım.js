@@ -2,7 +2,7 @@
  const ayarlar = require('../ayarlar.json');
  
  var prefix = ayarlar.json
-
+module.exports.run = async (bot, message, args) => {
  exports.run = (client, message) => {
    const yardim = new Discord.RichEmbed()
      .setColor('RANDOM')
