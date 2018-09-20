@@ -79,13 +79,12 @@ client.unload = command => {
   });
 };
 
-client.on('message', msg => {
+client.on('message', async msg => {
   if (msg.content.toLowerCase() === 'sa') {
-		if (!msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
-      msg.reply('Aleyküm selam, hoş geldin ^^');; 
-		}
-	}
-});
+    await msg.react('🇦');
+    msg.react('🇸');
+  }
+  });
 
 
 
