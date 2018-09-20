@@ -9,7 +9,7 @@ exports.run = (client, message) => {
   .setFooter('DailyBot\'s', bot.user.avatarURL)
   .addField("**❯Komutlar)"
   .addField("»v!1vs1"             :: Seçtiğiniz 2 kişiyi savaştırırsınız.)
-  .addField("»v!8ball"            :: Sihirli 8ball sorularınızı cevaplar.)
+  .addField("»v!8ball"            :: Sihirli 8 ball sorularınızı cevaplar.)
   .addField("»v!coolresim"        :: Coolresim gösterir.)
   .addField("»v!herkesebendençay" :: Herkese Çay Verir.)
 
