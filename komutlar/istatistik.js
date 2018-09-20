@@ -2,16 +2,24 @@ const Discord = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
 
-exports.run = (client, msg) => {
-  const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
-  msg.channel.sendCode("asciidoc", `= İSTATİSTİKLER =
-• Bellek kullanımı :: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-• Çalışma süresi   :: ${duration}
-• Kullanıcılar     :: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}
-• Sunucular        :: ${client.guilds.size.toLocaleString()}
-• Kanallar         :: ${client.channels.size.toLocaleString()}
-• Discord.JS sürüm :: v${Discord.version}`);
-};
+module.exports.run = async (bot, message, args) => {
+   const seksizaman = moment.duration(bot.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
+   const istatistikler = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setFooter('Croxy\'s', bot.user.avatarURL)
+  .addField("» Botun Sahibi", "<@342380541003300865> | Aslı#1776")
+  .addField("» Bellek kullanımı", (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + ' MB', true)  
+  .addField("» Çalışma süresi", seksizaman)
+  .addField("» Kullanıcılar", bot.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString(), true)
+  .addField("» Sunucular", bot.guilds.size.toLocaleString(), true)
+  .addField("» Kanallar", bot.channels.size.toLocaleString(), true)
+  .addField("» Discord.JS sürüm", "v"+Discord.version, true)
+  .addField(`» Node.JS sürüm`, `${process.version}`, true)
+  .addField("» Ping", bot.ping+" ms", true)
+  .addField("**❯ Bot Davet**", " [Davet Et](BOTUNUN DAVET LİNKİ KARDEŞİM.)", )
+  .addField("**❯ Destek Sunucusu**", " [Sunucumuza Katıl](BOTUNUN DESTEK SUNUCUSU KARDEŞİM)", )
+  return message.channel.send(istatistikler);
+  };
 
 exports.conf = {
   enabled: true,
