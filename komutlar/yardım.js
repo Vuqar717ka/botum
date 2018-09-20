@@ -7,11 +7,11 @@ exports.run = (client, message) => {
   const yardim = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setFooter('DailyBot\'s', bot.user.avatarURL)
-  .addField("**❯Komutlar)
-  .addField("»v!1vs1             :: Seçtiğiniz 2 kişiyi savaştırırsınız.)
-  .addField("»v!8ball            :: Sihirli 8ball sorularınızı cevaplar.)
-  .addField("»v!coolresim        :: Coolresim gösterir.)
-  .addField("»v!herkesebendençay :: Herkese Çay Verir.)
+  .addField("**❯Komutlar)"
+  .addField("»v!1vs1"             :: Seçtiğiniz 2 kişiyi savaştırırsınız.)
+  .addField("»v!8ball"            :: Sihirli 8ball sorularınızı cevaplar.)
+  .addField("»v!coolresim"        :: Coolresim gösterir.)
+  .addField("»v!herkesebendençay" :: Herkese Çay Verir.)
 
 exports.conf = {
   enabled: true,
